@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 
+const port = process.env.PORT || 3000
 const app = express()
 
 hbs.registerPartials(`${__dirname}/public/partials`)
@@ -61,6 +62,6 @@ app.get('/help', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Web app has started on port 3000...')
+app.listen(port, () => {
+  console.log(`Web app has started on port ${port}...`)
 })
